@@ -9,26 +9,26 @@
         /* Styles généraux */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9; /* Fond clair */
+            background-color: #0a0a0a; /* Fond sombre */
             margin: 0;
             padding: 0;
-            color: #333; /* Texte sombre */
+            color: #fff; /* Texte blanc */
         }
         header {
-            background-color: #6a1b9a; /* Violet */
-            color: #fff; /* Texte blanc */
+            background-color: #000; /* Noir */
+            color: #00ff00; /* Vert néon */
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 255, 0, 0.1); /* Ombre verte */
         }
         nav {
-            background-color: #7c4dff; /* Violet plus clair */
+            background-color: #111; /* Noir légèrement plus clair */
             padding: 10px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 255, 0, 0.1); /* Ombre verte */
         }
         nav a {
-            color: #fff; /* Texte blanc */
+            color: #00ff00; /* Vert néon */
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
@@ -41,12 +41,12 @@
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #fff; /* Fond blanc */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #111; /* Noir légèrement plus clair */
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.1); /* Ombre verte */
             border-radius: 10px;
         }
         .software {
-            border-bottom: 1px solid #ddd; /* Bordure grise */
+            border-bottom: 1px solid #333; /* Bordure grise */
             padding: 20px 0;
             display: flex;
             align-items: center;
@@ -63,23 +63,21 @@
         }
         .software h2 {
             margin: 0;
-            color: #6a1b9a; /* Violet */
+            color: #00ff00; /* Vert néon */
         }
         .software p {
             margin: 5px 0;
-            color: #666; /* Texte gris */
+            color: #ccc; /* Texte gris clair */
         }
         .download-btn {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #00c853; /* Vert */
-            color: #fff; /* Texte blanc */
+            background-color: #00ff00; /* Vert néon */
+            color: #000; /* Texte noir */
             text-decoration: none;
             border-radius: 5px;
             margin-top: 10px;
             transition: background-color 0.3s ease;
-            align-self: flex-end; /* Alignement du bouton */
-            margin-left: auto; /* Pousse le bouton à droite */
         }
         .download-btn:hover {
             background-color: #009624; /* Vert plus foncé au survol */
@@ -100,47 +98,46 @@
             margin-top: 10px;
         }
         .review {
-            background-color: #f9f9f9; /* Fond gris clair */
+            background-color: #222; /* Fond gris foncé */
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 255, 0, 0.1); /* Ombre verte */
         }
         .review p {
             margin: 5px 0;
-            color: #666; /* Texte gris */
+            color: #ccc; /* Texte gris clair */
         }
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #6a1b9a; /* Violet */
-            color: #fff; /* Texte blanc */
+            background-color: #000; /* Noir */
+            color: #00ff00; /* Vert néon */
             margin-top: 20px;
         }
         .about {
-            background-color: #f9f9f9; /* Fond gris clair */
+            background-color: #222; /* Fond gris foncé */
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .about h2 {
-            color: #6a1b9a; /* Violet */
+            color: #00ff00; /* Vert néon */
         }
         .about p {
-            color: #666; /* Texte gris */
+            color: #ccc; /* Texte gris clair */
         }
         .contact {
             margin-top: 20px;
         }
         .contact h2 {
-            color: #6a1b9a; /* Violet */
+            color: #00ff00; /* Vert néon */
         }
         .contact p {
-            color: #666; /* Texte gris */
+            color: #ccc; /* Texte gris clair */
         }
         .contact a {
-            color: #00c853; /* Vert */
+            color: #00ff00; /* Vert néon */
             text-decoration: none;
         }
         .contact a:hover {
@@ -150,53 +147,45 @@
             margin-top: 20px;
         }
         .categories h2 {
-            color: #6a1b9a; /* Violet */
+            color: #00ff00; /* Vert néon */
         }
         .categories ul {
             list-style-type: none;
             padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
         }
         .categories ul li {
-            background-color: #f9f9f9; /* Fond gris clair */
-            padding: 15px;
+            background-color: #222; /* Fond gris foncé */
+            padding: 10px;
+            margin-bottom: 10px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            flex: 1 1 calc(33.333% - 20px);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        .categories ul li:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 2px 4px rgba(0, 255, 0, 0.1); /* Ombre verte */
         }
         .categories ul li strong {
-            color: #6a1b9a; /* Violet */
+            color: #00ff00; /* Vert néon */
         }
         .form-container {
-            background-color: #f9f9f9; /* Fond gris clair */
+            background-color: #222; /* Fond gris foncé */
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 255, 0, 0.1); /* Ombre verte */
         }
         .form-container h2 {
-            color: #6a1b9a; /* Violet */
+            color: #00ff00; /* Vert néon */
         }
         .form-container input, .form-container textarea {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
-            border: 1px solid #ddd; /* Bordure grise */
+            border: 1px solid #333; /* Bordure grise */
             border-radius: 5px;
-            background-color: #fff; /* Fond blanc */
-            color: #333; /* Texte sombre */
+            background-color: #111; /* Fond sombre */
+            color: #fff; /* Texte blanc */
         }
         .form-container button {
             padding: 10px 20px;
-            background-color: #00c853; /* Vert */
-            color: #fff; /* Texte blanc */
+            background-color: #00ff00; /* Vert néon */
+            color: #000; /* Texte noir */
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -218,13 +207,6 @@
             .software img {
                 margin-right: 0;
                 margin-bottom: 10px;
-            }
-            .categories ul li {
-                flex: 1 1 100%;
-            }
-            .download-btn {
-                margin-left: 0; /* Réinitialiser la marge sur mobile */
-                align-self: center; /* Centrer le bouton sur mobile */
             }
         }
     </style>
@@ -344,17 +326,17 @@
         <section class="contact" id="contact">
             <h2>Contactez-nous</h2>
             <p>Pour toute question ou suggestion, n'hésitez pas à nous contacter :</p>
-            <p>Email : <a href="mailto:finangnonricardo115@gmail.com">finangnonricardo115@gmail.com</a></p>
+            <p>Email : <a href="mailto:contact@telechargement-logiciels.com">contact@telechargement-logiciels.com</a></p>
             <p>Téléphone : +33 1 23 45 67 89</p>
         </section>
 
         <!-- Formulaire de contact -->
         <section class="form-container">
             <h2>Formulaire de Contact</h2>
-            <form action="https://formspree.io/f/mvojzqzb" method="POST">
-                <input type="text" name="name" placeholder="Votre nom" required>
-                <input type="email" name="email" placeholder="Votre email" required>
-                <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+            <form>
+                <input type="text" placeholder="Votre nom" required>
+                <input type="email" placeholder="Votre email" required>
+                <textarea placeholder="Votre message" rows="5" required></textarea>
                 <button type="submit">Envoyer</button>
             </form>
         </section>
