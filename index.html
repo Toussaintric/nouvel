@@ -78,6 +78,8 @@
             border-radius: 5px;
             margin-top: 10px;
             transition: background-color 0.3s ease;
+            align-self: flex-end; /* Alignement du bouton */
+            margin-left: auto; /* Pousse le bouton à droite */
         }
         .download-btn:hover {
             background-color: #009624; /* Vert plus foncé au survol */
@@ -219,6 +221,10 @@
             }
             .categories ul li {
                 flex: 1 1 100%;
+            }
+            .download-btn {
+                margin-left: 0; /* Réinitialiser la marge sur mobile */
+                align-self: center; /* Centrer le bouton sur mobile */
             }
         }
     </style>
