@@ -3,118 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mr_hacker - Téléchargements</title>
+    <title>Site de Téléchargement de Logiciels</title>
     <style>
         body {
-            font-family: sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0; /* Couleur de fond claire */
-            color: #333; /* Couleur de texte sombre */
         }
-
         header {
-            background-color: #333; /* Couleur de fond sombre pour l'en-tête */
-            color: #fff; /* Couleur de texte claire pour l'en-tête */
+            background-color: #333;
+            color: #fff;
             padding: 20px;
             text-align: center;
         }
-
-        h1 {
-            margin-bottom: 10px;
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        nav {
-            background-color: #eee; /* Couleur de fond claire pour la navigation */
-            padding: 10px;
+        .software {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
         }
-
-        nav ul {
-            list-style: none;
+        .software:last-child {
+            border-bottom: none;
+        }
+        .software h2 {
             margin: 0;
-            padding: 0;
-            text-align: center;
+            color: #333;
         }
-
-        nav li {
-            display: inline;
-            margin: 0 10px;
+        .software p {
+            margin: 5px 0;
+            color: #666;
         }
-
-        main {
-            padding: 20px;
-            display: flex; /* Utilisation de flexbox pour la disposition */
-            flex-wrap: wrap; /* Permet aux blocs de passer à la ligne */
-            justify-content: center; /* Centre les blocs horizontalement */
-        }
-
-        .logiciel {
-            border: 1px solid #ccc;
-            margin: 10px; /* Ajout de marge autour des blocs */
-            padding: 20px;
-            background-color: #fff; /* Fond blanc pour les blocs de logiciels */
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
-            width: 300px; /* Largeur fixe pour les blocs */
-            text-align: center; /* Centre le contenu du bloc */
-        }
-
-        .logiciel img {
-            max-width: 100%; /* Empêche les images de dépasser la largeur du bloc */
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .logiciel h2 {
-            margin-top: 0;
-        }
-
-        .telecharger {
+        .download-btn {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #007bff; /* Couleur de bouton attrayante */
+            background-color: #28a745;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
+            margin-top: 10px;
         }
-
-        footer {
+        .download-btn:hover {
+            background-color: #218838;
+        }
+        .categories, .filters {
+            margin-bottom: 20px;
+        }
+        .categories button, .filters select {
+            padding: 10px;
+            margin-right: 10px;
+            border: none;
             background-color: #333;
             color: #fff;
-            padding: 10px;
+            cursor: pointer;
+        }
+        .rating span {
+            cursor: pointer;
+            color: #ccc;
+            font-size: 24px;
+        }
+        .rating span.active {
+            color: #ffcc00;
+        }
+        footer {
             text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Mr_hacker</h1>
-        <p>Téléchargements de logiciels</p>
+        <h1>Site de Téléchargement de Logiciels</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Logiciels</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <div class="logiciel">
-            <img src="icone_logiciel_1.png" alt="Icône du logiciel 1">
-            <h2>Nom du logiciel 1</h2>
-            <p>Description du logiciel 1.</p>
-            <a href="URL_DU_LOGICIEL_1" class="telecharger" download>Télécharger</a>
+
+    <div class="container">
+        <!-- Barre de recherche -->
+        <div class="search">
+            <input type="text" id="search" placeholder="Rechercher un logiciel...">
+            <button onclick="searchSoftware()">Rechercher</button>
         </div>
 
-        <div class="logiciel">
-            <img src="icone_logiciel_2.png" alt="Icône du logiciel 2">
-            <h2>Nom du logiciel 2</h2>
-            <p>Description du logiciel 2.</p>
-            <a href="URL_DU_LOGICIEL_2" class="telecharger" download>Télécharger</a>
+        <!-- Catégories -->
+        <div class="categories">
+            <button onclick="filterSoftware('tous')">Tous</button>
+            <button onclick="filterSoftware('bureautique')">Bureautique</button>
+            <button onclick="filterSoftware('securité')">Sécurité</button>
+            <button onclick="filterSoftware('jeux')">Jeux</button>
         </div>
 
-    </main>
+        <!-- Filtres avancés -->
+        <div class="filters">
+            <select id="os-filter" onchange="filterByOS()">
+                <option value="tous">Tous les systèmes</option>
+                <option value="windows">Windows</option>
+                <option value="mac">macOS</option>
+                <option value="linux">Linux</option>
+            </select>
+        </div>
+
+        <!-- Liste des logiciels -->
+        <div class="software" data-category="bureautique" data-os="windows">
+            <h2>Logiciel 1</h2>
+            <p>Description du Logiciel 1. Ce logiciel est utile pour...</p>
+            <p>Système d'exploitation : Windows</p>
+            <div class="rating">
+                <span onclick="rate(this, 1)">★</span>
+                <span onclick="rate(this, 2)">★</span>
+                <span onclick="rate(this, 3)">★</span>
+                <span onclick="rate(this, 4)">★</span>
+                <span onclick="rate(this, 5)">★</span>
+            </div>
+            <p id="rating-text-1">Note : 0/5</p>
+            <a href="https://example.com/software1.zip" download="software1.zip" class="download-btn">
+                Télécharger (vérifié)
+            </a>
+        </div>
+
+        <div class="software" data-category="securité" data-os="mac">
+            <h2>Logiciel 2</h2>
+            <p>Description du Logiciel 2. Ce logiciel est conçu pour...</p>
+            <p>Système d'exploitation : macOS</p>
+            <div class="rating">
+                <span onclick="rate(this, 1)">★</span>
+                <span onclick="rate(this, 2)">★</span>
+                <span onclick="rate(this, 3)">★</span>
+                <span onclick="rate(this, 4)">★</span>
+                <span onclick="rate(this, 5)">★</span>
+            </div>
+            <p id="rating-text-2">Note : 0/5</p>
+            <a href="https://example.com/software2.zip" download="software2.zip" class="download-btn">
+                Télécharger (vérifié)
+            </a>
+        </div>
+
+        <div class="software" data-category="jeux" data-os="linux">
+            <h2>Logiciel 3</h2>
+            <p>Description du Logiciel 3. Ce logiciel permet de...</p>
+            <p>Système d'exploitation : Linux</p>
+            <div class="rating">
+                <span onclick="rate(this, 1)">★</span>
+                <span onclick="rate(this, 2)">★</span>
+                <span onclick="rate(this, 3)">★</span>
+                <span onclick="rate(this, 4)">★</span>
+                <span onclick="rate(this, 5)">★</span>
+            </div>
+            <p id="rating-text-3">Note : 0/5</p>
+            <a href="https://example.com/software3.zip" download="software3.zip" class="download-btn">
+                Télécharger (vérifié)
+            </a>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2024 Mr_hacker</p>
+        <p>&copy; 2023 Site de Téléchargement de Logiciels. Tous droits réservés.</p>
     </footer>
+
+    <script>
+        // Fonction de recherche
+        function searchSoftware() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const softwareList = document.querySelectorAll('.software');
+            softwareList.forEach(software => {
+                const title = software.querySelector('h2').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    software.style.display = 'block';
+                } else {
+                    software.style.display = 'none';
+                }
+            });
+        }
+
+        // Filtrage par catégorie
+        function filterSoftware(category) {
+            const softwareList = document.querySelectorAll('.software');
+            softwareList.forEach(software => {
+                const softwareCategory = software.getAttribute('data-category');
+                if (category === 'tous' || softwareCategory === category) {
+                    software.style.display = 'block';
+                } else {
+                    software.style.display = 'none';
+                }
+            });
+        }
+
+        // Filtrage par système d'exploitation
+        function filterByOS() {
+            const os = document.getElementById('os-filter').value;
+            const softwareList = document.querySelectorAll('.software');
+            softwareList.forEach(software => {
+                const softwareOS = software.getAttribute('data-os');
+                if (os === 'tous' || softwareOS === os) {
+                    software.style.display = 'block';
+                } else {
+                    software.style.display = 'none';
+                }
+            });
+        }
+
+        // Notation
+        function rate(element, rating) {
+            const stars = element.parentElement.querySelectorAll('span');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+            const ratingText = element.parentElement.nextElementSibling;
+            ratingText.textContent = Note : ${rating}/5;
+        }
+    </script>
 </body>
 </html>
