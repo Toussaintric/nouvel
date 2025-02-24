@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site de Téléchargement de Logiciels</title>
     <style>
+        /* Styles généraux */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -17,6 +18,20 @@
             padding: 20px;
             text-align: center;
         }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
         .container {
             max-width: 1200px;
             margin: 20px auto;
@@ -26,10 +41,18 @@
         }
         .software {
             border-bottom: 1px solid #ddd;
-            padding: 10px 0;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
         }
         .software:last-child {
             border-bottom: none;
+        }
+        .software img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 10px;
         }
         .software h2 {
             margin: 0;
@@ -51,16 +74,8 @@
         .download-btn:hover {
             background-color: #218838;
         }
-        .categories, .filters {
-            margin-bottom: 20px;
-        }
-        .categories button, .filters select {
-            padding: 10px;
-            margin-right: 10px;
-            border: none;
-            background-color: #333;
-            color: #fff;
-            cursor: pointer;
+        .rating {
+            margin: 10px 0;
         }
         .rating span {
             cursor: pointer;
@@ -69,6 +84,18 @@
         }
         .rating span.active {
             color: #ffcc00;
+        }
+        .reviews {
+            margin-top: 10px;
+        }
+        .review {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .review p {
+            margin: 5px 0;
         }
         footer {
             text-align: center;
@@ -84,82 +111,105 @@
         <h1>Site de Téléchargement de Logiciels</h1>
     </header>
 
-    <div class="container">
-        <!-- Barre de recherche -->
-        <div class="search">
-            <input type="text" id="search" placeholder="Rechercher un logiciel...">
-            <button onclick="searchSoftware()">Rechercher</button>
-        </div>
+    <!-- Barre de navigation -->
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#logiciels">Logiciels</a>
+        <a href="#categories">Catégories</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-        <!-- Catégories -->
-        <div class="categories">
-            <button onclick="filterSoftware('tous')">Tous</button>
-            <button onclick="filterSoftware('bureautique')">Bureautique</button>
-            <button onclick="filterSoftware('securité')">Sécurité</button>
-            <button onclick="filterSoftware('jeux')">Jeux</button>
-        </div>
+    <div class="container" id="accueil">
+        <!-- Section Accueil -->
+        <section>
+            <h2>Bienvenue sur notre site de téléchargement de logiciels</h2>
+            <p>Découvrez une large sélection de logiciels gratuits et payants pour tous vos besoins.</p>
+        </section>
 
-        <!-- Filtres avancés -->
-        <div class="filters">
-            <select id="os-filter" onchange="filterByOS()">
-                <option value="tous">Tous les systèmes</option>
-                <option value="windows">Windows</option>
-                <option value="mac">macOS</option>
-                <option value="linux">Linux</option>
-            </select>
-        </div>
+        <!-- Section Logiciels -->
+        <section id="logiciels">
+            <h2>Nos Logiciels</h2>
 
-        <!-- Liste des logiciels -->
-        <div class="software" data-category="bureautique" data-os="windows">
-            <h2>Logiciel 1</h2>
-            <p>Description du Logiciel 1. Ce logiciel est utile pour...</p>
-            <p>Système d'exploitation : Windows</p>
-            <div class="rating">
-                <span onclick="rate(this, 1)">★</span>
-                <span onclick="rate(this, 2)">★</span>
-                <span onclick="rate(this, 3)">★</span>
-                <span onclick="rate(this, 4)">★</span>
-                <span onclick="rate(this, 5)">★</span>
+            <!-- Logiciel 1 -->
+            <div class="software">
+                <img src="https://via.placeholder.com/100" alt="Logiciel 1">
+                <div>
+                    <h2>Logiciel 1</h2>
+                    <p>Description du Logiciel 1. Ce logiciel est utile pour...</p>
+                    <div class="rating">
+                        <span onclick="rate(this, 1)">★</span>
+                        <span onclick="rate(this, 2)">★</span>
+                        <span onclick="rate(this, 3)">★</span>
+                        <span onclick="rate(this, 4)">★</span>
+                        <span onclick="rate(this, 5)">★</span>
+                    </div>
+                    <p id="rating-text-1">Note : 4.5/5</p>
+                    <div class="reviews">
+                        <div class="review">
+                            <p><strong>Utilisateur 1 :</strong> Excellent logiciel, très facile à utiliser.</p>
+                        </div>
+                        <div class="review">
+                            <p><strong>Utilisateur 2 :</strong> Très satisfait, je le recommande.</p>
+                        </div>
+                    </div>
+                    <a href="https://example.com/software1.zip" download="software1.zip" class="download-btn">
+                        Télécharger (vérifié)
+                    </a>
+                </div>
             </div>
-            <p id="rating-text-1">Note : 0/5</p>
-            <a href="https://example.com/software1.zip" download="software1.zip" class="download-btn">
-                Télécharger (vérifié)
-            </a>
-        </div>
 
-        <div class="software" data-category="securité" data-os="mac">
-            <h2>Logiciel 2</h2>
-            <p>Description du Logiciel 2. Ce logiciel est conçu pour...</p>
-            <p>Système d'exploitation : macOS</p>
-            <div class="rating">
-                <span onclick="rate(this, 1)">★</span>
-                <span onclick="rate(this, 2)">★</span>
-                <span onclick="rate(this, 3)">★</span>
-                <span onclick="rate(this, 4)">★</span>
-                <span onclick="rate(this, 5)">★</span>
+            <!-- Logiciel 2 -->
+            <div class="software">
+                <img src="https://via.placeholder.com/100" alt="Logiciel 2">
+                <div>
+                    <h2>Logiciel 2</h2>
+                    <p>Description du Logiciel 2. Ce logiciel est conçu pour...</p>
+                    <div class="rating">
+                        <span onclick="rate(this, 1)">★</span>
+                        <span onclick="rate(this, 2)">★</span>
+                        <span onclick="rate(this, 3)">★</span>
+                        <span onclick="rate(this, 4)">★</span>
+                        <span onclick="rate(this, 5)">★</span>
+                    </div>
+                    <p id="rating-text-2">Note : 4.7/5</p>
+                    <div class="reviews">
+                        <div class="review">
+                            <p><strong>Utilisateur 3 :</strong> Très performant, je l'adore.</p>
+                        </div>
+                        <div class="review">
+                            <p><strong>Utilisateur 4 :</strong> Parfait pour mes besoins.</p>
+                        </div>
+                    </div>
+                    <a href="https://example.com/software2.zip" download="software2.zip" class="download-btn">
+                        Télécharger (vérifié)
+                    </a>
+                </div>
             </div>
-            <p id="rating-text-2">Note : 0/5</p>
-            <a href="https://example.com/software2.zip" download="software2.zip" class="download-btn">
-                Télécharger (vérifié)
-            </a>
-        </div>
+        </section>
 
-        <div class="software" data-category="jeux" data-os="linux">
-            <h2>Logiciel 3</h2>
-            <p>Description du Logiciel 3. Ce logiciel permet de...</p>
-            <p>Système d'exploitation : Linux</p>
-            <div class="rating">
-                <span onclick="rate(this, 1)">★</span>
-                <span onclick="rate(this, 2)">★</span>
-                <span onclick="rate(this, 3)">★</span>
-                <span onclick="rate(this, 4)">★</span>
-                <span onclick="rate(this, 5)">★</span>
+        <!-- Section Catégories -->
+        <section id="categories">
+            <h2>Catégories</h2>
+            <p>Explorez nos logiciels par catégorie :</p>
+            <ul>
+                <li><strong>Bureautique :</strong> Logiciels pour la productivité.</li>
+                <li><strong>Sécurité :</strong> Antivirus et outils de protection.</li>
+                <li><strong>Jeux :</strong> Des jeux pour tous les goûts.</li>
+                <li><strong>Multimédia :</strong> Lecteurs vidéo et audio.</li>
+            </ul>
+        </section>
+
+        <!-- Section Avis -->
+        <section id="avis">
+            <h2>Avis des Utilisateurs</h2>
+            <div class="review">
+                <p><strong>Utilisateur 5 :</strong> Site très fiable, je télécharge toujours ici.</p>
             </div>
-            <p id="rating-text-3">Note : 0/5</p>
-            <a href="https://example.com/software3.zip" download="software3.zip" class="download-btn">
-                Télécharger (vérifié)
-            </a>
-        </div>
+            <div class="review">
+                <p><strong>Utilisateur 6 :</strong> Les logiciels sont de haute qualité.</p>
+            </div>
+        </section>
     </div>
 
     <footer>
@@ -167,48 +217,7 @@
     </footer>
 
     <script>
-        // Fonction de recherche
-        function searchSoftware() {
-            const query = document.getElementById('search').value.toLowerCase();
-            const softwareList = document.querySelectorAll('.software');
-            softwareList.forEach(software => {
-                const title = software.querySelector('h2').textContent.toLowerCase();
-                if (title.includes(query)) {
-                    software.style.display = 'block';
-                } else {
-                    software.style.display = 'none';
-                }
-            });
-        }
-
-        // Filtrage par catégorie
-        function filterSoftware(category) {
-            const softwareList = document.querySelectorAll('.software');
-            softwareList.forEach(software => {
-                const softwareCategory = software.getAttribute('data-category');
-                if (category === 'tous' || softwareCategory === category) {
-                    software.style.display = 'block';
-                } else {
-                    software.style.display = 'none';
-                }
-            });
-        }
-
-        // Filtrage par système d'exploitation
-        function filterByOS() {
-            const os = document.getElementById('os-filter').value;
-            const softwareList = document.querySelectorAll('.software');
-            softwareList.forEach(software => {
-                const softwareOS = software.getAttribute('data-os');
-                if (os === 'tous' || softwareOS === os) {
-                    software.style.display = 'block';
-                } else {
-                    software.style.display = 'none';
-                }
-            });
-        }
-
-        // Notation
+        // Fonction de notation
         function rate(element, rating) {
             const stars = element.parentElement.querySelectorAll('span');
             stars.forEach((star, index) => {
