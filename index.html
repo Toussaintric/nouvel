@@ -7,10 +7,11 @@
     <style>
         /* Styles généraux */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            color: #333;
         }
         header {
             background-color: #333;
@@ -22,12 +23,14 @@
             background-color: #444;
             padding: 10px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         nav a {
             color: #fff;
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
+            transition: color 0.3s ease;
         }
         nav a:hover {
             color: #ffcc00;
@@ -38,15 +41,17 @@
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         .software {
             border-bottom: 1px solid #ddd;
             padding: 20px 0;
             display: flex;
             align-items: center;
+            transition: transform 0.3s ease;
         }
-        .software:last-child {
-            border-bottom: none;
+        .software:hover {
+            transform: scale(1.02);
         }
         .software img {
             width: 100px;
@@ -70,6 +75,7 @@
             text-decoration: none;
             border-radius: 5px;
             margin-top: 10px;
+            transition: background-color 0.3s ease;
         }
         .download-btn:hover {
             background-color: #218838;
@@ -81,6 +87,7 @@
             cursor: pointer;
             color: #ccc;
             font-size: 24px;
+            transition: color 0.3s ease;
         }
         .rating span.active {
             color: #ffcc00;
@@ -93,6 +100,7 @@
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .review p {
             margin: 5px 0;
@@ -103,6 +111,54 @@
             background-color: #333;
             color: #fff;
             margin-top: 20px;
+        }
+        .about {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .about h2 {
+            color: #333;
+        }
+        .about p {
+            color: #666;
+        }
+        .contact {
+            margin-top: 20px;
+        }
+        .contact h2 {
+            color: #333;
+        }
+        .contact p {
+            color: #666;
+        }
+        .contact a {
+            color: #28a745;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        .categories {
+            margin-top: 20px;
+        }
+        .categories h2 {
+            color: #333;
+        }
+        .categories ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .categories ul li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .categories ul li strong {
+            color: #28a745;
         }
     </style>
 </head>
@@ -124,7 +180,7 @@
         <!-- Section Accueil -->
         <section>
             <h2>Bienvenue sur notre site de téléchargement de logiciels</h2>
-            <p>Découvrez une large sélection de logiciels gratuits et payants pour tous vos besoins.</p>
+            <p>Découvrez une large sélection de logiciels gratuits et payants pour tous vos besoins. Nous proposons des logiciels de qualité, vérifiés et sécurisés.</p>
         </section>
 
         <!-- Section Logiciels -->
@@ -136,7 +192,7 @@
                 <img src="https://via.placeholder.com/100" alt="Logiciel 1">
                 <div>
                     <h2>Logiciel 1</h2>
-                    <p>Description du Logiciel 1. Ce logiciel est utile pour...</p>
+                    <p>Description du Logiciel 1. Ce logiciel est utile pour la productivité et la gestion de tâches.</p>
                     <div class="rating">
                         <span onclick="rate(this, 1)">★</span>
                         <span onclick="rate(this, 2)">★</span>
@@ -164,7 +220,7 @@
                 <img src="https://via.placeholder.com/100" alt="Logiciel 2">
                 <div>
                     <h2>Logiciel 2</h2>
-                    <p>Description du Logiciel 2. Ce logiciel est conçu pour...</p>
+                    <p>Description du Logiciel 2. Ce logiciel est conçu pour la sécurité et la protection des données.</p>
                     <div class="rating">
                         <span onclick="rate(this, 1)">★</span>
                         <span onclick="rate(this, 2)">★</span>
@@ -209,6 +265,20 @@
             <div class="review">
                 <p><strong>Utilisateur 6 :</strong> Les logiciels sont de haute qualité.</p>
             </div>
+        </section>
+
+        <!-- Section À propos -->
+        <section class="about">
+            <h2>À propos de nous</h2>
+            <p>Nous sommes une équipe passionnée par la technologie et dédiée à fournir les meilleurs logiciels pour nos utilisateurs. Notre mission est de rendre les logiciels de qualité accessibles à tous.</p>
+        </section>
+
+        <!-- Section Contact -->
+        <section class="contact" id="contact">
+            <h2>Contactez-nous</h2>
+            <p>Pour toute question ou suggestion, n'hésitez pas à nous contacter :</p>
+            <p>Email : <a href="mailto:contact@telechargement-logiciels.com">contact@telechargement-logiciels.com</a></p>
+            <p>Téléphone : +33 1 23 45 67 89</p>
         </section>
     </div>
 
