@@ -1,30 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link rel="stylesheet" href="style.css">
-    <title>Contact US</title>
-    <link rel="stylesheet" href="style.css.css">
-   <style>   
-    .bouton-telechargement {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-
+    <title>Mr_hacker - Téléchargements</title>
+    <style>
+        /* Styles CSS (voir fichier style.css) */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Couleur de fond claire */
+            color: #333; /* Couleur de texte sombre */
+        }
+        header {
+            background-color: #333; /* Couleur de fond sombre pour l'en-tête */
+            color: #fff; /* Couleur de texte claire pour l'en-tête */
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        nav {
+            background-color: #eee; /* Couleur de fond claire pour la navigation */
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav li {
+            display: inline;
+            margin: 0 10px;
+        }
+        main {
+            padding: 20px;
+        }
+        .logiciel {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff; /* Fond blanc pour les blocs de logiciels */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+        }
+        .logiciel h2 {
+            margin-top: 0;
+        }
+        .telecharger {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff; /* Couleur de bouton attrayante */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    
- <a href="hello.exe" download class="bouton-telechargement">Télécharger le logiciel</a>
-    
+    <header>
+        <h1>Mr_hacker</h1>
+        <p>Téléchargements de logiciels</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Logiciels</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="logiciel">
+            <h2>Nom du logiciel 1</h2>
+            <p>Description du logiciel 1.</p>
+            <a href="URL_DU_LOGICIEL_1" class="telecharger" download>Télécharger</a>
+        </div>
+        </main>
+    <footer>
+        <p>&copy; 2024 Mr_hacker</p>
+    </footer>
 </body>
 </html>
