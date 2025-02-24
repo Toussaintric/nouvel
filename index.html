@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mr_hacker - Téléchargements</title>
     <style>
-        /* Styles CSS (voir fichier style.css) */
         body {
             font-family: sans-serif;
             margin: 0;
@@ -13,42 +12,62 @@
             background-color: #f0f0f0; /* Couleur de fond claire */
             color: #333; /* Couleur de texte sombre */
         }
+
         header {
             background-color: #333; /* Couleur de fond sombre pour l'en-tête */
             color: #fff; /* Couleur de texte claire pour l'en-tête */
             padding: 20px;
             text-align: center;
         }
+
         h1 {
             margin-bottom: 10px;
         }
+
         nav {
             background-color: #eee; /* Couleur de fond claire pour la navigation */
             padding: 10px;
         }
+
         nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
             text-align: center;
         }
+
         nav li {
             display: inline;
             margin: 0 10px;
         }
+
         main {
             padding: 20px;
+            display: flex; /* Utilisation de flexbox pour la disposition */
+            flex-wrap: wrap; /* Permet aux blocs de passer à la ligne */
+            justify-content: center; /* Centre les blocs horizontalement */
         }
+
         .logiciel {
             border: 1px solid #ccc;
-            margin-bottom: 20px;
+            margin: 10px; /* Ajout de marge autour des blocs */
             padding: 20px;
             background-color: #fff; /* Fond blanc pour les blocs de logiciels */
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+            width: 300px; /* Largeur fixe pour les blocs */
+            text-align: center; /* Centre le contenu du bloc */
         }
+
+        .logiciel img {
+            max-width: 100%; /* Empêche les images de dépasser la largeur du bloc */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
         .logiciel h2 {
             margin-top: 0;
         }
+
         .telecharger {
             display: inline-block;
             padding: 10px 20px;
@@ -57,6 +76,7 @@
             text-decoration: none;
             border-radius: 5px;
         }
+
         footer {
             background-color: #333;
             color: #fff;
@@ -79,11 +99,20 @@
     </nav>
     <main>
         <div class="logiciel">
+            <img src="icone_logiciel_1.png" alt="Icône du logiciel 1">
             <h2>Nom du logiciel 1</h2>
             <p>Description du logiciel 1.</p>
             <a href="URL_DU_LOGICIEL_1" class="telecharger" download>Télécharger</a>
         </div>
-        </main>
+
+        <div class="logiciel">
+            <img src="icone_logiciel_2.png" alt="Icône du logiciel 2">
+            <h2>Nom du logiciel 2</h2>
+            <p>Description du logiciel 2.</p>
+            <a href="URL_DU_LOGICIEL_2" class="telecharger" download>Télécharger</a>
+        </div>
+
+    </main>
     <footer>
         <p>&copy; 2024 Mr_hacker</p>
     </footer>
